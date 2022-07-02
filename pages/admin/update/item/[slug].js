@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Admin from '../../../../Layouts/Admin';
 import { useRouter } from 'next/router';
 
-export default function item() {
+export default function item({ Data }) {
 
     let router = useRouter();
     let { slug } = router.query
@@ -27,13 +27,10 @@ export default function item() {
 
     useEffect(() => {
 
-        axios.get('http://localhost:5000/item/getOne/' + slug).then((e) => {
-            console.log(e.data)
-            settitle(e.data.data.title);
-            setimg(e.data.data.img);
-            setprice(e.data.data.price);
-            setdescription(e.data.data.description);
-        })
+        settitle(Data.title);
+        setimg(Data.img);
+        setprice(Data.price);
+        setdescription(Data.description);
 
     }, [])
 
@@ -151,4 +148,12 @@ item.getLayout = function getLayout(page) {
             {page}
         </Admin>
     )
+}
+
+export async function getServerSideProps(context) {
+
+    let x = await axios('http://localhost:5000/item/getOne/' + context.query.slug)
+    return {
+        props: { Data: x.data.data },
+    }
 }

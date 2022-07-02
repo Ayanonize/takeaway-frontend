@@ -1,101 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Main from '../Layouts/Main'
 import AllItem from '../components/AllItem'
 
 
 export default function Mainpage() {
+
+  const [search, setsearch] = useState('');
+
   return (
     <>
-      {/* <h1 className='text-4xl nav mx-5 text-gray-600 my-24'>Browse Some Of Our Dishes</h1>
-      <section class="text-gray-600 body-font">
-        <div class="container px-5 mx-auto">
-          <div class="flex flex-wrap -m-4">
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" //>
-              </a>
+      <div class="relative mt-6 max-w-lg mx-auto">
+        <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
+          <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
 
-            
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                <p class="mt-1">$16.00</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261" //>
-              </a>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                <p class="mt-1">$21.15</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/422x262" //>
-              </a>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                <p class="mt-1">$12.00</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263" //>
-              </a>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                <p class="mt-1">$18.40</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/424x264" //>
-              </a>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                <p class="mt-1">$16.00</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265" //>
-              </a>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                <p class="mt-1">$21.15</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267" //>
-              </a>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                <p class="mt-1">$12.00</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268" //>
-              </a>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                <p class="mt-1">$18.40</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>*/}
-      <AllItem />
+        <input class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline" type="search" placeholder="Search" onChange={(e) => { setsearch(e.target.value) }} value={search} />
+      </div>
+
+      <AllItem search={search} />
 
 
     </>
