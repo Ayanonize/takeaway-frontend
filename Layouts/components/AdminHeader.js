@@ -16,8 +16,8 @@ export default function AdminHeader() {
                 </a>
                 <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
                     <Link href={'/admin/item'}><a class="mr-5 hover:text-gray-900">Items</a></Link>
-                    <a class="mr-5 hover:text-gray-900">Second Link</a>
-                    <a class="mr-5 hover:text-gray-900">Third Link</a>
+                    <Link href={'/admin/couponCode'}><a class="mr-5 hover:text-gray-900">Coupon Codes</a></Link>
+                    <Link href={'/admin/orders'}><a class="mr-5 hover:text-gray-900">Orders</a></Link>
                     <a class="mr-5 hover:text-gray-900">Fourth Link</a>
                 </nav>
                 <button class="inline-flex items-center bg-blue-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-blue-400 duration-300 rounded text-base mt-4 md:mt-0" onClick={() => {
